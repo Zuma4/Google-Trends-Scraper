@@ -31,9 +31,13 @@ time,
 ## How To Use
 
 ### Install Requirements
+
 1 - You'll Need To Download Python Before Being Able To Use The Script
 
 2 - Open Terminal In The main File Then Paste ```pip install -r requirements.txt``` Into Your Terminal
+
+3 - To Install The Suitable WebDriver, Please Check 
+https://www.javatpoint.com/selenium-webdriver-installation
 
 ### Preferences
 
