@@ -41,5 +41,6 @@ https://www.javatpoint.com/selenium-webdriver-installation
 
 ### Preferences
 
-You'll Need To Take A Look At User Options In The Script And Set Your Preferences
+You'll Need To Take A Look At User Options In The Script And Set Your Preferences,
+
 The Script Will Save The Output As A CSV Or A JSON File (based On Your Settings)
