@@ -2,7 +2,7 @@
 
 ## Description
 
-Countries Interests Is An Automation Script To Explore What Concerns 
+Google Trends Scraper Is An Automation Script To Explore What Concerns 
 Each Country In The Mean Time.
 
 ## How It Works
