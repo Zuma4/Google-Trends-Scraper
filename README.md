@@ -22,11 +22,11 @@ Python.
 
 ### Used Libs And Packs 
 
-Selenium
-json
-pandas
-os
-time
+Selenium,
+json,
+pandas,
+os,
+time,
 
 ## How To Use
 
