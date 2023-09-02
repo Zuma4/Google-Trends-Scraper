@@ -30,6 +30,12 @@ time,
 
 ## How To Use
 
-You'll Need To Take A Look At User Options In The Script And Set Your Preferences
+### Install Requirements
+1 - You'll Need To Download Python Before Being Able To Use The Script
 
+2 - Open Terminal In The main File Then Paste ```pip install -r requirements.txt``` Into Your Terminal
+
+### Preferences
+
+You'll Need To Take A Look At User Options In The Script And Set Your Preferences
 The Script Will Save The Output As A CSV Or A JSON File (based On Your Settings)
