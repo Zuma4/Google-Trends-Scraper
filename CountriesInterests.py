@@ -34,17 +34,15 @@ def counter(list) -> list:
                 # Cleaning
                 searchCount = searchCount[:searchCount.index('K')]
 
-                # Multiplying by one thousand
                 count = int(searchCount) * 1000
                 countedList.append(count)
 
             # M for 1 million
             elif 'M' in searchCount :
                 searchCount = searchCount[:searchCount.index('M')]
-                # Multiplying by one million
+                
                 count = int(searchCount) * 1000000
 
-            # adding to the output list
             countedList.append(count)
 
         except :
@@ -115,13 +113,10 @@ def scraper(Bigdata) -> dict:
         # Opening Google Trends
         driver.get(f"https://trends.google.com/trends/trendingsearches/daily?geo={country}&hl=en-US")
 
-        # Try statement for error handling
         try :
             
             # Waiting for the page to load
             driver.implicitly_wait(5)
-
-            # Finding elements
             # Main Day List
             TheDailyList = driver.find_element(by=By.CLASS_NAME, value="feed-list-wrapper")
             # Iterating through TheDailyList to find each element
@@ -130,7 +125,6 @@ def scraper(Bigdata) -> dict:
         except :
             continue
         
-        # Iterating through each element
         for data in info :
 
             # Finding elements
@@ -139,9 +133,7 @@ def scraper(Bigdata) -> dict:
             # The search count element
             searchCount = str(data.find_element(by=By.CLASS_NAME, value="search-count-title").text)
 
-            # Appending title element for input list (translator)
             translateThis.append(title)
-            # Appending search count for input list (counter)
             countThis.append(searchCount)
             
         # Calling counter() func and adding it to Search Count list In Data (17)
@@ -152,7 +144,7 @@ def scraper(Bigdata) -> dict:
         
     driver.quit()
 
-    # Returning Collected Data
+    # Big Data is the collected data so far
     return Bigdata
 
 
@@ -160,24 +152,19 @@ def main():
 
     """The Main() Function is for All The Previous Functions Into One"""
 
-    # Opening DataTemplate.json
     # DataTemplate file is for needed inputs and output saving
     Bigdata = json.load(open('DataTemplate.json', encoding='utf8'))
 
-    # Calling scraper() function (97)
     # for more info for each function please read above (from line number)
     ReturnedData = scraper(Bigdata)
 
-    # Checking FileFormat Option
     if FileFormat.upper() == 'CSV' :
 
-        # Saving into CSV File using pandas lib
         DataFrame = pd.DataFrame.from_dict(ReturnedData)
         DataFrame.T.to_csv('SavedData.csv', encoding='utf8', mode='a')
     
     elif FileFormat.upper() == 'JSON' :
 
-        # Saving into json file using json lib
         with open('SavedData.json', 'a', encoding="utf8") as fp:
             json.dump(ReturnedData, fp, ensure_ascii=False)
 
